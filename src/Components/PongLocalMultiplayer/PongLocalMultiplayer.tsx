@@ -5,5 +5,5 @@ import { usePongGameController } from "../../hooks/usePongGameController";
 export const PongLocalMultiplayer: React.FC = () => {
   const pongController = usePongGameController();
 
-  return <PongRenderer width={600} gameState={pongController.gameState} />;
+  return <PongRenderer width={1080} gameState={pongController.gameState} />;
 };

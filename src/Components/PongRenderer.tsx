@@ -24,8 +24,9 @@ export const PongRenderer: React.FC<Props> = (props) => {
     const styles: Record<string, CSSProperties> = {
         pongBackground: {
             background: "black",
-            width: "100%",
-            height: "100vh"
+            width,
+            height,
+            position: "relative"
         },
         textStyle: {
             color: "white",
@@ -33,11 +34,11 @@ export const PongRenderer: React.FC<Props> = (props) => {
         },    
         centerLine: {
             width: 0,
-            height: "100vh",
+            height,
             border: "white 5px solid",
             borderStyle: "none dashed none none",
             position: "absolute",
-            left: "49.8%"
+            left: width / 2 - 2.5
         },
         paddleLeft: {
             width: PADDLE_WIDTH * width,
@@ -46,7 +47,7 @@ export const PongRenderer: React.FC<Props> = (props) => {
             marginLeft: PADDLE_WALLSPACING * width,
             position: "absolute",
             left: 0,
-            top: props.gameState.paddleAPosition
+            top: ( props.gameState.paddleAPosition - PADDLE_HEIGHT / 2 ) * height
         },
         paddleRight: {
             width: PADDLE_WIDTH * width,
@@ -55,15 +56,15 @@ export const PongRenderer: React.FC<Props> = (props) => {
             marginRight: PADDLE_WALLSPACING * width,
             position: "absolute",
             right: 0,
-            top: props.gameState.paddleBPosition
+            top: ( props.gameState.paddleBPosition - PADDLE_HEIGHT / 2 ) * height
         },
         ball: {
             background: "white",
             width: BALL_WIDTH * width,
             height: BALL_HEIGHT * height,
             position: "absolute",
-            left: ballXAxis * width,
-            top: ballYAxis * width,
+            left: ( ballXAxis - BALL_WIDTH / 2 ) * width,
+            top: ( ballYAxis - BALL_HEIGHT / 2 ) * height,
         }
     }
 
