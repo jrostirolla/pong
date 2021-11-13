@@ -3,28 +3,17 @@ import { PongRenderer } from "../PongRenderer";
 import { usePongGameController } from "../../hooks/usePongGameController";
 import { useInterval, useKeyPress } from "react-use";
 
-const MOVE_AMOUNT = 0.1;
+const MOVE_AMOUNT = 0.02;
 
 export const PongLocalMultiplayer: React.FC = () => {
   const pongController = usePongGameController();
 
-  // const [p1UpPressed, setP1UpPressed] = useState(false);
-  // const [p1DownPressed, setP1DownPressed] = useState(false);
-  // const [p2UpPressed, setP2UpPressed] = useState(false);
-  // const [p2DownPressed, setP2DownPressed] = useState(false);
-  //
+  const [paUpPressed] = useKeyPress("w");
+  const [paDownPressed] = useKeyPress("s");
+  const [pbUpPressed] = useKeyPress("o");
+  const [pbDownPressed] = useKeyPress("l");
 
-  //
-  // useKeyPressEvent(
-  //   "w",
-  //   () => setP1UpPressed(true),
-  //   () => setP1UpPressed(true)
-  // );
-
-  const paUpPressed = useKeyPress("w");
-  const paDownPressed = useKeyPress("s");
-  const pbUpPressed = useKeyPress("w");
-  const pbDownPressed = useKeyPress("s");
+  console.log(paUpPressed, paDownPressed);
 
   useInterval(() => {
     if (paUpPressed) {
