@@ -10,3 +10,6 @@ export const BALL_WIDTH = 0.01;
 export const ASPECT_RATIO = 1080/1920;
 
 export const BALL_HEIGHT = BALL_WIDTH * ASPECT_RATIO;
+
+export const PADDLE_MIN = PADDLE_HEIGHT / 2;
+export const PADDLE_MAX = 1 - PADDLE_HEIGHT / 2;
