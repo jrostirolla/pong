@@ -29,6 +29,7 @@ const styles: Record<string, CSSProperties> = {
         height: "100vh",
         border: "white 5px solid",
         borderStyle: "none dashed none none",
+        position: "absolute",
         left: "49.8%"
     },
     paddleRight: {
@@ -46,7 +47,7 @@ export const PongRenderer: React.FC<Props> = (props) => {
         <h1 style={styles.textStyle}>PONG</h1>
             <div>
                 <section id="Score">
-                    <h1 style={styles.textStyle}>0 : 0</h1>
+                    <h1 style={styles.textStyle}> {props.gameState.scoreA} : {props.gameState.scoreA} </h1>
                 </section>
                 <section id="PaddleOne">
                     <div style={styles.paddleLeft}>

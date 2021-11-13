@@ -1,4 +1,4 @@
-import {IPongRenderGameState} from "../Components/IPongRenderGameState";
+import {IPongRenderGameState} from "../IPongRenderGameState";
 import {PADDLE_MAX, PADDLE_MIN} from "../Constants";
 
 const baseGameState: IPongRenderGameState = {
