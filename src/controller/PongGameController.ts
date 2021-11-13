@@ -86,7 +86,7 @@ export class PongGameController {
 
     // for now, assume the ball will always bounce perpendicular to the paddle
     let ballVelocityX = this.lastBounceEvent.paddle === "A" ? 0.5 : -0.5;
-    let ballVelocityY = 2;
+    let ballVelocityY = 0;
 
     const tickPosition = (time: number, timeDelta: number): boolean => {
       // tick position
